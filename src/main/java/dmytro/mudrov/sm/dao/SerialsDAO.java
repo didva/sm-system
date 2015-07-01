@@ -6,6 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface SerialsDAO extends MongoRepository<Serial, String> {
 
-    public Serial findByNameIgnoreCase(String name);
+    Serial findByNameIgnoreCase(String name);
 
 }

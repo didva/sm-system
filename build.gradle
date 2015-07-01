@@ -14,6 +14,9 @@ dependencies {
     compile 'org.springframework:spring-context:4.1.6.RELEASE'
     compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
     compile 'org.springframework.data:spring-data-mongodb:1.7.0.RELEASE'
+    compile 'org.springframework.security:spring-security-config:4.0.1.RELEASE'
+    compile 'org.springframework.security:spring-security-core:4.0.1.RELEASE'
+    compile 'org.springframework.security:spring-security-web:4.0.1.RELEASE'
 
     //LOGGING
     compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.3'

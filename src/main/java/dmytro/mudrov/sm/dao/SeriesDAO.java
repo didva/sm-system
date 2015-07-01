@@ -8,6 +8,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface SeriesDAO extends MongoRepository<Series, String> {
 
-    public List<Series> findBySerial(Serial serial);
+    List<Series> findBySerial(Serial serial);
 
 }

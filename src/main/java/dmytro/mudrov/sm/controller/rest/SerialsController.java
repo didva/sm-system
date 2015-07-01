@@ -1,6 +1,5 @@
-package dmytro.mudrov.sm.controller;
+package dmytro.mudrov.sm.controller.rest;
 
-import java.util.Collections;
 import java.util.List;
 
 import dmytro.mudrov.sm.dao.SerialsDAO;
@@ -11,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/serials")
+@RequestMapping("/rest/serials")
 public class SerialsController {
 
     @Autowired
     private SerialsDAO serialsDAO;
 
-    @RequestMapping("/")
+    @RequestMapping
     public List<Serial> getSerials() {
         return serialsDAO.findAll();
     }
