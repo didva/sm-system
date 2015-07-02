@@ -2,7 +2,8 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'war'
 
-version = '1.0'
+compileJava.options.fork = true
+compileJava.options.forkOptions.executable = 'C:\\Program Files\\Java\\jdk1.8.0_25\\bin\\javac'
 
 repositories {
     mavenCentral()

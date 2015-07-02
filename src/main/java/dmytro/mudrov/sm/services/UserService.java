@@ -1,10 +1,13 @@
 package dmytro.mudrov.sm.services;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.Arrays;
 import java.util.List;
 
 import dmytro.mudrov.sm.dao.impl.MongoUserDAO;
 import dmytro.mudrov.sm.model.UserRoles;
+import dmytro.mudrov.sm.model.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -33,8 +36,8 @@ public class UserService implements UserDetailsService {
         mongoUserDAO.save(user);
     }
 
-    public List<User> findAll() {
-        return mongoUserDAO.findAll();
+    public List<UserDTO> findAll() {
+        return mongoUserDAO.findAll().stream().map(UserDTO::new).collect(toList());
     }
 
 }

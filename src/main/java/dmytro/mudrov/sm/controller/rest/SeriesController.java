@@ -2,8 +2,8 @@ package dmytro.mudrov.sm.controller.rest;
 
 import java.util.List;
 
-import dmytro.mudrov.sm.dao.SerialsDAO;
-import dmytro.mudrov.sm.model.Serial;
+import dmytro.mudrov.sm.model.dto.SeriesDTO;
+import dmytro.mudrov.sm.services.SeriesService;
 import dmytro.mudrov.sm.services.test.DataGeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,27 +12,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/rest/serials")
-public class SerialsController {
+@RequestMapping("/rest/series/{serialId}")
+public class SeriesController {
 
     @Autowired
-    private SerialsDAO serialsDAO;
+    private SeriesService seriesService;
+
     @Autowired
     private DataGeneratorService dataGeneratorService;
 
     @RequestMapping
-    public List<Serial> getSerials() {
-        return serialsDAO.findAll();
-    }
-
-    @RequestMapping("/{id}")
-    public Serial getSerial(@PathVariable("id") String id) {
-        return serialsDAO.findOne(id);
+    public List<SeriesDTO> findAll(@PathVariable("serialId") String serialId) {
+        return seriesService.findAll(serialId);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Serial addSerial() {
-        return dataGeneratorService.addSerial();
+    public SeriesDTO addOne(@PathVariable("serialId") String serialId) {
+        return dataGeneratorService.addSeries(serialId);
     }
 
 }
