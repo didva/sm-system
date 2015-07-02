@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import dmytro.mudrov.sm.dao.impl.MongoUserDAO;
+import dmytro.mudrov.sm.model.UserRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -26,7 +27,7 @@ public class UserService implements UserDetailsService {
     }
 
     public void createUser(String username, String password) {
-        List<SimpleGrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority("ROLE_REGULAR_USER"));
+        List<SimpleGrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority(UserRoles.USER));
         String encodedPassword = passwordEncoder.encode(password);
         User user = new User(username, encodedPassword, authorities);
         mongoUserDAO.save(user);

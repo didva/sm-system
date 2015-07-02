@@ -2,13 +2,11 @@ package dmytro.mudrov.sm.services.converters;
 
 import dmytro.mudrov.sm.dao.impl.MongoUserDAO;
 import org.springframework.core.convert.converter.Converter;
-import org.springframework.data.convert.WritingConverter;
 import org.springframework.security.core.userdetails.User;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 
-@WritingConverter
 public class UserWriteConverter implements Converter<User, DBObject> {
 
     @Override
