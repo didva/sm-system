@@ -1,9 +1,17 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'war'
-
-compileJava.options.fork = true
-compileJava.options.forkOptions.executable = 'C:\\Program Files\\Java\\jdk1.8.0_25\\bin\\javac'
+apply plugin: 'com.bmuschko.tomcat'
 
 repositories {
     mavenCentral()
@@ -32,4 +40,9 @@ dependencies {
 
     //SERVLET_API
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+
+    def tomcatVersion = '8.0.15'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
 }

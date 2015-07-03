@@ -1,18 +1,17 @@
 package dmytro.mudrov.sm.model.dto;
 
-import dmytro.mudrov.sm.model.Serial;
 import dmytro.mudrov.sm.model.Series;
 
 public class SeriesDTO {
 
     private String id;
-    private Serial serial;
+    private int number;
     private String name;
 
     public SeriesDTO(Series series) {
         id = series.getId();
-        serial = series.getSerial();
         name = series.getName();
+        number = series.getNumber();
     }
 
     public String getId() {
@@ -23,19 +22,19 @@ public class SeriesDTO {
         this.id = id;
     }
 
-    public Serial getSerial() {
-        return serial;
-    }
-
-    public void setSerial(Serial serial) {
-        this.serial = serial;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

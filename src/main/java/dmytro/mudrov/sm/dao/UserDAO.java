@@ -9,7 +9,7 @@ public interface UserDAO extends Repository<User, String> {
 
     User findOne(String name);
 
-    void save(User user);
+    void insert(User user);
 
     boolean exists(String id);
 

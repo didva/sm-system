@@ -33,7 +33,7 @@ public class UserService implements UserDetailsService {
         List<SimpleGrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority(UserRoles.USER));
         String encodedPassword = passwordEncoder.encode(password);
         User user = new User(username, encodedPassword, authorities);
-        mongoUserDAO.save(user);
+        mongoUserDAO.insert(user);
     }
 
     public List<UserDTO> findAll() {

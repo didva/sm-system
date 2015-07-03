@@ -1,7 +1,5 @@
 package dmytro.mudrov.sm.model.dto;
 
-import static java.util.stream.Collectors.toList;
-
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -16,8 +14,7 @@ public class UserDTO {
         username = src.getUsername();
         Collection<GrantedAuthority> authorities = src.getAuthorities();
         if (authorities != null) {
-            userRoles = authorities.stream().map(GrantedAuthority::getAuthority).collect(toList())
-                    .toArray(new String[authorities.size()]);
+            userRoles = (String[]) authorities.stream().map(GrantedAuthority::getAuthority).toArray();
         }
     }
 

@@ -8,7 +8,6 @@ import dmytro.mudrov.sm.services.test.DataGeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -24,11 +23,6 @@ public class SeriesController {
     @RequestMapping
     public List<SeriesDTO> findAll(@PathVariable("serialId") String serialId) {
         return seriesService.findAll(serialId);
-    }
-
-    @RequestMapping(method = RequestMethod.POST)
-    public SeriesDTO addOne(@PathVariable("serialId") String serialId) {
-        return dataGeneratorService.addSeries(serialId);
     }
 
 }

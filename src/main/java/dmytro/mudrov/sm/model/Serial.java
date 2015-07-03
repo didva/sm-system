@@ -58,7 +58,6 @@ public class Serial {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).add("id", id).add("name", name).add("description", description)
-                .toString();
+        return Objects.toStringHelper(this).add("id", id).add("name", name).add("description", description).toString();
     }
 }

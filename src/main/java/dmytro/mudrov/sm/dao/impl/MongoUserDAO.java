@@ -26,8 +26,8 @@ public class MongoUserDAO implements UserDAO {
     }
 
     @Override
-    public void save(User user) {
-        mongoOperations.save(user);
+    public void insert(User user) {
+        mongoOperations.insert(user);
     }
 
     @Override
