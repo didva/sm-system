@@ -7,6 +7,7 @@ import java.util.List;
 import dmytro.mudrov.sm.dao.SerialsDAO;
 import dmytro.mudrov.sm.dao.SeriesDAO;
 import dmytro.mudrov.sm.model.Serial;
+import dmytro.mudrov.sm.model.Series;
 import dmytro.mudrov.sm.model.dto.SeriesDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,4 +28,7 @@ public class SeriesService {
         return seriesDAO.findBySerial(serial).stream().map(SeriesDTO::new).collect(toList());
     }
 
+    public Series findById(String seriesId) {
+        return seriesDAO.findOne(seriesId);
+    }
 }

@@ -46,6 +46,10 @@ public class Series {
         this.data = data;
     }
 
+    public String getFileName() {
+        return name.replaceAll(" ", "_") + ".torrent";
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)
