@@ -42,8 +42,8 @@ public class SeriesService {
         return seriesDAO.findBySeasonOrderByNumberDesc(season).stream().map(SeriesDTO::new).collect(toList());
     }
 
-    public Series findByName(Season season, String name) {
-        return seriesDAO.findBySeasonAndNameIgnoreCase(season, name);
+    public Series findByNumber(Season season, int number) {
+        return seriesDAO.findBySeasonAndNumber(season, number);
     }
 
     public Series findById(String seriesId) {

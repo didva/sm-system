@@ -7,7 +7,7 @@ import dmytro.mudrov.sm.model.Season;
 public class SeasonDTO {
 
     private String id;
-    private int number;
+    private double number;
     private List<SeriesDTO> series;
 
     public SeasonDTO(Season season) {
@@ -23,7 +23,7 @@ public class SeasonDTO {
         this.id = id;
     }
 
-    public int getNumber() {
+    public double getNumber() {
         return number;
     }
 

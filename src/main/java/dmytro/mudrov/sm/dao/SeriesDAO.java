@@ -10,6 +10,6 @@ public interface SeriesDAO extends MongoRepository<Series, String> {
 
     List<Series> findBySeasonOrderByNumberDesc(Season season);
 
-    Series findBySeasonAndNameIgnoreCase(Season season, String name);
+    Series findBySeasonAndNumber(Season season, int name);
 
 }

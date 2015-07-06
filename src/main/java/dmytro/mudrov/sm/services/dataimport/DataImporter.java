@@ -7,6 +7,7 @@ import dmytro.mudrov.sm.dao.SerialsDAO;
 import dmytro.mudrov.sm.model.Season;
 import dmytro.mudrov.sm.model.Series;
 import dmytro.mudrov.sm.services.SeriesService;
+import dmytro.mudrov.sm.services.dataimport.datasource.DataSource;
 import dmytro.mudrov.sm.services.dataimport.model.SerialImportData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,7 @@ public class DataImporter {
     @Autowired
     private DataAggregator dataAggregator;
 
-    public void importData() {
+    public void importData() throws Exception {
         List<SerialImportData> serialsData = dataSource.getSerials();
         List<Series> aggregatedData = dataAggregator.aggregateData(serialsData);
         aggregatedData.stream().forEach(series -> {

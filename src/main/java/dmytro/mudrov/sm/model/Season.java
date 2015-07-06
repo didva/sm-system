@@ -13,7 +13,7 @@ public class Season {
     private String id;
     @DBRef
     private Serial serial;
-    private int number;
+    private double number;
     private byte[] data;
 
     public String getId() {
@@ -32,11 +32,11 @@ public class Season {
         this.serial = serial;
     }
 
-    public int getNumber() {
+    public double getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(double number) {
         this.number = number;
     }
 

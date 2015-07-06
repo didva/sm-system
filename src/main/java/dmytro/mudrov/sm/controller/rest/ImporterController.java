@@ -27,7 +27,7 @@ public class ImporterController {
     private SerialsDAO serialsDAO;
 
     @RequestMapping(method = RequestMethod.POST)
-    public List<SeriesDTO> generateSerials() {
+    public List<SeriesDTO> generateSerials() throws Exception {
         dataImporter.importData();
         List<SeriesDTO> seriesList = new ArrayList<>();
         serialsDAO.findAll().stream().map(Serial::getId).collect(toList()).stream().map(seriesService::findAll)

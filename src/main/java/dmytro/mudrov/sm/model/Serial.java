@@ -11,6 +11,7 @@ public class Serial {
     @Id
     private String id;
     private String name;
+    private String originalName;
     private String description;
 
     public String getId() {
@@ -27,6 +28,14 @@ public class Serial {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getOriginalName() {
+        return originalName;
+    }
+
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
     }
 
     public String getDescription() {
@@ -48,6 +57,7 @@ public class Serial {
 
         return Objects.equal(this.id, that.id) &&
                 Objects.equal(this.name, that.name) &&
+                Objects.equal(this.originalName, that.originalName) &&
                 Objects.equal(this.description, that.description);
     }
 
@@ -58,6 +68,7 @@ public class Serial {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).add("id", id).add("name", name).add("description", description).toString();
+        return Objects.toStringHelper(this).add("id", id).add("name", name).add("originalName", originalName)
+                .add("description", description).toString();
     }
 }

@@ -13,7 +13,8 @@
 
     <context:component-scan base-package="dmytro.mudrov.sm.services"/>
     <context:component-scan base-package="dmytro.mudrov.sm.dao.impl"/>
-    <context:property-placeholder location='classpath:db-config.properties'/>
+
+    <context:property-placeholder location='classpath:db-config.properties,classpath:lostfilm.properties'/>
 
     <mongo:mongo host="${db.host}" port="${db.port}"/>
     <mongo:db-factory dbname="${db.name}" mongo-ref="mongo"/>

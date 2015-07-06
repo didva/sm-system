@@ -10,6 +10,6 @@ public interface SeasonsDAO extends MongoRepository<Season, String> {
 
     List<Season> findBySerialOrderByNumberDesc(Serial serial);
 
-    Season findBySerialAndNumber(Serial serial, int number);
+    Season findBySerialAndNumber(Serial serial, double number);
 
 }

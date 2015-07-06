@@ -11,7 +11,9 @@ public class SerialConverter implements Converter<SerialImportData, Serial> {
     @Override
     public Serial convert(SerialImportData source) {
         Serial serial = new Serial();
+        serial.setId(source.getId());
         serial.setName(source.getName());
+        serial.setOriginalName(source.getOriginalName());
         serial.setDescription(source.getDescription());
         return serial;
     }

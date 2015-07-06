@@ -38,7 +38,7 @@ public class DataAggregator {
     public List<Series> aggregateData(List<SerialImportData> serialsData) {
         List<Series> seriesList = new ArrayList<>();
         for (SerialImportData serialData : serialsData) {
-            Serial serial = serialsDAO.findByNameIgnoreCase(serialData.getName());
+            Serial serial = serialsDAO.findOne(serialData.getId());
             if (serial == null) {
                 serial = serialConverter.convert(serialData);
             }
@@ -54,7 +54,7 @@ public class DataAggregator {
                 for (SeriesImportData seriesData : seasonData.getSeries()) {
                     Series series = null;
                     if (season.getId() != null) {
-                        series = seriesService.findByName(season, serialData.getName());
+                        series = seriesService.findByNumber(season, seriesData.getNumber());
                     }
                     if (series == null) {
                         series = seriesConverter.convert(seriesData);

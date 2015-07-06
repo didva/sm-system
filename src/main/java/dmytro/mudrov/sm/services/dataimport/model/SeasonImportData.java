@@ -1,18 +1,19 @@
 package dmytro.mudrov.sm.services.dataimport.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SeasonImportData {
 
-    private int number;
+    private double number;
     private byte[] data;
-    private List<SeriesImportData> series;
+    private List<SeriesImportData> series = new ArrayList<>();
 
-    public int getNumber() {
+    public double getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(double number) {
         this.number = number;
     }
 
