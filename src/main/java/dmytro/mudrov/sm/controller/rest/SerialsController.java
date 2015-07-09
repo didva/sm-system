@@ -2,8 +2,6 @@ package dmytro.mudrov.sm.controller.rest;
 
 import java.util.List;
 
-import dmytro.mudrov.sm.dao.SerialsDAO;
-import dmytro.mudrov.sm.model.Serial;
 import dmytro.mudrov.sm.model.dto.BaseSerialDTO;
 import dmytro.mudrov.sm.model.dto.FullSerialDTO;
 import dmytro.mudrov.sm.services.SerialsService;
