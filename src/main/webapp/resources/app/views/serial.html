@@ -1,0 +1,10 @@
+<div ng-show="serial">
+    <h3>{{ serial.name }}{{ "(" + serial.originalName + ")"}}</h3>
+    <div>{{ serial.description }}</div>
+    <div ng-repeat="season in serial.seasons">
+        <div>Season {{ season.number }}</div>
+        <div ng-repeat="series in season.series">
+            <div><span>{{ series.number }}</span> <span>{{series.name}}</span></div>
+        </div>
+    </div>
+</div>

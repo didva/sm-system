@@ -22,6 +22,10 @@ public class SeasonsService {
 
     public List<SeasonDTO> findAll(String serialId) {
         Serial serial = serialsDAO.findOne(serialId);
+        return findAll(serial);
+    }
+
+    public List<SeasonDTO> findAll(Serial serial) {
         if (serial == null) {
             throw new IllegalArgumentException();
         }

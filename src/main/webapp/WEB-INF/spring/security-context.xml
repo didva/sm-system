@@ -13,6 +13,7 @@
     </bean>
 
     <security:http auto-config="true">
+        <security:csrf disabled="true"/>
         <security:intercept-url pattern="/**" access="hasRole('ROLE_ANONYMOUS')"/>
     </security:http>
 </beans>

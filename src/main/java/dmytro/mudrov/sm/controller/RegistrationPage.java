@@ -17,11 +17,6 @@ public class RegistrationPage {
     @RequestMapping(method = RequestMethod.POST)
     public String saveUser(@RequestParam String username, @RequestParam String password) {
         userService.createUser(username, password);
-        return "registration";
-    }
-
-    @RequestMapping
-    public String getRegistrationPage() {
-        return "registration";
+        return "redirect:app/index.html";
     }
 }

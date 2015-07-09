@@ -1,0 +1,5 @@
+<ul class="nav nav-sidebar nav-pills nav-stacked">
+    <li ng-repeat="serial in serials" role="presentation" ng-class="{active: isSelected(serial.id)}">
+        <a href="#serial?serialId={{ serial.id }}">{{ serial.name }}</a>
+    </li>
+</ul>
