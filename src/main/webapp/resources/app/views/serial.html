@@ -1,10 +1,19 @@
 <div ng-show="serial">
     <h3>{{ serial.name }}{{ "(" + serial.originalName + ")"}}</h3>
     <div>{{ serial.description }}</div>
-    <div ng-repeat="season in serial.seasons">
-        <div>Season {{ season.number }}</div>
-        <div ng-repeat="series in season.series">
-            <div><span>{{ series.number }}</span> <span>{{series.name}}</span></div>
+
+    <div class="well" ng-repeat="season in serial.seasons">
+        <a id="toggler" href="javascript:void();" data-toggle="collapse" class="active" data-target="#season{{season.number}}">
+            <i class="icon-folder-open"></i>
+            <i class="icon-folder-close"></i>
+            <span>Season {{ season.number }}</span>
+            <span>{{ series.length }} series</span>
+        </a>
+
+        <div id="season{{season.number}}" class="collapse out">
+            <ul class="nav nav-list" ng-repeat="series in season.series">
+                <li><a href="sm-system/files/series/{{ series.id }}"><span>{{ series.number }}</span> <span>{{series.name}}</span></a></li>
+            </ul>
         </div>
     </div>
 </div>
